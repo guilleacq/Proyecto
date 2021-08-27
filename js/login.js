@@ -28,13 +28,14 @@ function verifyPassword() {
        return false;  
     }
 
-    /*if (!((username == "gacquistapace" && pw == "guillermo1234") ||
-    (username == "admin" && pw == "administrador") ||
-    (username == "jap2021" && pw == "programar2021")))
-    {
-        document.getElementById("message").innerHTML = "[!] Usuario o contraseña incorrecta";
-        return false;
-    }
-
-    */
+    saveUsername();
+    return true;
 }  
+
+function saveUsername()
+{
+   var input = document.getElementById('uname').value;
+   localStorage.setItem('username', input); //Linea de codigo para guardar en la memoria el username
+
+   // Get input: localStorage.getItem('username');
+}

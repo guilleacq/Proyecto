@@ -59,6 +59,38 @@ footer p {
   transition: ease-in-out color .15s;
 }
 
+.user-nav
+{
+  position: relative;
+  font-weight: bold;
+  font-family: Helvetica, Arial, sans-serif;
+  background-color: rgb(252, 252, 252);
+  border-radius: 11px;
+  width: 115px;
+  text-align: right;
+  transition: background-color .3s;
+}
+
+.user-nav:hover
+{
+  background-color: rgb(156, 156, 156);
+}
+
+.user-nav > i
+{
+  position: absolute;
+  top: 4px;
+  left: 7px;
+  font-size: 21px;
+}
+
+.user-nav > a
+{
+  text-decoration: none;
+  padding-right: 10px;
+  color:rgba(14, 14, 14, 0.692)
+}
+
 .light-text {
   color: white;
 }

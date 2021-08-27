@@ -44,4 +44,12 @@ var getJSONData = function(url){
 //que el documento se encuentra cargado, es decir, se encuentran todos los
 //elementos HTML presentes.
 document.addEventListener("DOMContentLoaded", function(e){
+  loadUsername();
 });
+
+
+function loadUsername()
+{
+  var div = document.getElementsByName('menu-top');
+  div[0].innerHTML += `<div onclick="location.href='my-profile.html';" style="cursor: pointer;" class="user-nav"><i class="bi bi-person"></i><a class="py-2 d-none d-md-inline-block" href="#">`+localStorage.getItem('username')+`</a></div>`;
+}
