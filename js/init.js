@@ -51,5 +51,21 @@ document.addEventListener("DOMContentLoaded", function(e){
 function loadUsername()
 {
   var div = document.getElementsByName('menu-top');
-  div[0].innerHTML += `<div onclick="location.href='my-profile.html';" style="cursor: pointer;" class="user-nav"><i class="bi bi-person"></i><a class="py-2 d-none d-md-inline-block" href="#">`+localStorage.getItem('username')+`</a></div>`;
+  var nombreUsuario = localStorage.getItem('username');
+  var nombreUsuarioTexto = nombreUsuario.slice(0, 10);
+
+  if (nombreUsuario.length > 10)
+  {
+    div[0].innerHTML += `<div onclick="location.href='my-profile.html';" style="cursor: pointer;" class="user-nav"><i class="bi bi-person"></i><a class="py-2 d-none d-md-inline-block" href="#">`+nombreUsuarioTexto+'...'+`</a></div>`;
+  }
+  else
+  {
+    div[0].innerHTML += `<div onclick="location.href='my-profile.html';" style="cursor: pointer;" class="user-nav"><i class="bi bi-person"></i><a class="py-2 d-none d-md-inline-block" href="#">`+nombreUsuarioTexto+`</a></div>`;
+  }
+
+
+  
+
+
+
 }

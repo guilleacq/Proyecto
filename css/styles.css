@@ -66,7 +66,9 @@ footer p {
   font-family: Helvetica, Arial, sans-serif;
   background-color: rgb(252, 252, 252);
   border-radius: 11px;
-  width: 115px;
+  width: auto;
+  padding-left: 40px;
+  padding-right: 5px;
   text-align: right;
   transition: background-color .3s;
 }
