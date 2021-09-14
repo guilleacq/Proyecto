@@ -1,9 +1,16 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap');
+
 .jumbotron, .card-body, .container, .site-header{
     font-family: 'Raleway', serif !important;
 }
 
 .jumbotron .display-4{
     font-weight: bold;
+}
+
+html
+{
+  scroll-behavior: smooth;
 }
 
 .jumbotron {
@@ -73,6 +80,142 @@ footer p {
   transition: background-color .3s;
 }
 
+@media only screen and (max-width: 800px) {
+  .user-nav > i
+  {
+    visibility: hidden;
+  }
+}
+
+.comment-title
+{
+  position: relative;
+  left: 57px;
+  bottom: 13px;
+  font-family: 'Roboto', sans-serif;
+
+}
+
+.comment-title p
+{
+  display: inline;
+}
+
+#comment-amount
+{
+  position: relative;
+  left: 45px;
+  font-family: 'Roboto', sans-serif;
+  font-size: 18px;
+  margin-bottom: 42px;
+
+}
+
+.create-comment
+{
+  margin-bottom: 90px;
+}
+
+.newcomment:focus{
+  outline: none;
+}
+
+
+.newcomment
+{
+  position: relative;
+  left: 57px;
+  top: 8px;
+  border: 0;
+  width: 100%;
+}
+
+.newcomment-submit
+{
+  width: 100px;
+  position: relative;
+  left: 57px;
+  top: 30px;
+  margin-bottom: 60px;
+  font-family: 'Roboto', sans-serif;
+  font-size: 13px;
+  font-weight: bolder;
+  background: linear-gradient(to bottom right, #33ccff 0%, #00ff99 112%);
+  border: 0;
+}
+
+.submit-icon
+{
+  position: relative;
+  left: 160px;
+}
+
+.newcomment-bar
+{
+  position: absolute;
+  left: 50px;
+  width: 60%;
+}
+
+.comment-name
+{
+  font-size: 14px;
+  font-weight: bolder;
+}
+
+
+
+.comment-text
+{
+  position: relative;
+  width: 80%;
+  bottom: 50px;
+  left: 57px;
+  font-size: 15px;
+}
+
+.comment
+{
+  margin-top: 20px;
+  margin-left: 45px;
+}
+
+.comment-photo
+{
+  position: relative;
+  bottom: 30px;
+
+}
+
+.comment-score
+{
+  position: relative;
+  bottom: 40px;
+  left: 57px;   
+}
+
+.comment-date
+{
+  position: relative;
+  font-weight: bolder;
+  left: 8px;
+  color: rgb(77, 77, 77);
+  font-size: 11px;
+}
+
+.comment-photo img
+{
+  width: 44px;
+}
+
+
+.comments-division
+{
+  margin-top: 100px;
+  margin-bottom: 25px;
+}
+
+
 .user-nav:hover
 {
   background-color: rgb(156, 156, 156);
@@ -114,6 +257,7 @@ footer p {
   left: 50%;
   transform: translate(-50%, 0);
 }
+
 
 .lds-ring {
   display: inline-block;
@@ -170,6 +314,96 @@ a.custom-card:hover {
   text-decoration: inherit;
 }
 
+/* Added stuff */
+
 .checked {
   color: orange;
 }
+
+.star-rating
+{
+  margin-top: 30px;
+  height: 80px;
+  width: 100%;
+  margin-left: 57px;
+}
+
+/* Star rating: https://codepen.io/andreacrawford/pen/NvqJXW */
+
+
+  /* use display:inline-flex to prevent whitespace issues. alternatively, you can put all the children of .rating-group on a single line */
+  .rating-group {
+    display: inline-flex;
+  }
+  
+  /* make hover effect work properly in IE */
+  .rating__icon {
+    pointer-events: none;
+  }
+  
+  /* hide radio inputs */
+  .rating__input {
+   position: absolute !important;
+   left: -9999px !important;
+  }
+
+  .rating-name
+  {
+    font-family: Arial, Helvetica, sans-serif, sans-serif;
+    font-size: 16px;
+    color:rgb(131, 131, 131);
+    margin-bottom: 3px;
+  }
+
+  .btnbuy
+  {
+      background: linear-gradient(to bottom right, #33ccff 0%, #00ff99 112%);
+      border: 0;
+  }
+
+  /* set icon padding and size */
+  .rating__label {
+    cursor: pointer;
+    padding: 0 0.1em;
+    font-size: 1.5rem;
+  }
+  
+  /* set default star color */
+  .rating__icon--star {
+    color: rgb(34, 34, 34);
+  }
+  
+  /* set color of none icon when unchecked */
+  .rating__icon--none {
+    color: #eee;
+  }
+
+  /* if none icon is checked, make it red */
+  .rating__input--none:checked + .rating__label .rating__icon--none {
+    color: red;
+  }
+
+  /* if any input is checked, make its following siblings grey */
+  .rating__input:checked ~ .rating__label .rating__icon--star {
+    color: #ddd;
+  }
+
+  /* make all stars orange on rating group hover */
+  .rating-group:hover .rating__label .rating__icon--star {
+    color: rgb(39, 39, 39);
+  }
+
+  /* make hovered input's following siblings grey on hover */
+  .rating__input:hover ~ .rating__label .rating__icon--star {
+    color: #ddd;
+  }
+  
+  /* make none icon grey on rating group hover */
+  .rating-group:hover .rating__input--none:not(:hover) + .rating__label .rating__icon--none {
+     color: #eee;
+  }
+
+  /* make none icon red on hover */
+  .rating__input--none:hover + .rating__label .rating__icon--none {
+    color: red;
+  }

@@ -11,9 +11,10 @@
 
   <link rel="canonical" href="https://getbootstrap.com/docs/4.3/examples/album/">
   <link href="https://fonts.googleapis.com/css?family=Raleway:300,300i,400,400i,700,700i,900,900i" rel="stylesheet">
-  <link href="css/font-awesome.min.css" rel="stylesheet">
+  <!-- Bootstrap core CSS -->
   <link href="css/bootstrap.min.css" rel="stylesheet">
   <link href="css/styles.css" rel="stylesheet">
+
 </head>
 
 <body>
@@ -26,15 +27,81 @@
       <a class="py-2 d-none d-md-inline-block" href="cart.html">Mi carrito</a>
     </div>
   </nav>
-  <div class="container p-5">
-    <div class="alert alert-danger" role="alert" style="position: relative; width:auto; top: 0;">
-      <h4 class="alert-heading">¡A trabajar! :)</h4>
-      <p>Esta sección corresponde a: Entrega 3 (Fecha de entrega: 19/09/2021) y Entrega 4 (Fecha de entrega: 03/10/2021).</p>
-      <hr>
-      <p class="mb-0">Para saber qué debes hacer, fijate en la actividad en CREA correspondiente a esta entrega.</p>
+  <main role="main">
+    <div class="container mt-5">
+      <div class="text-center p-4">
+        <h2>Descripción del producto</h2>
+        <p class="lead">Encontrarás aquí toda la información del producto seleccionado.</p>
+      </div>
+      <h3 id="productName"></h3>
+      <hr class="my-3">
+      <dl>
+        <dt>Descripción</dt>
+        <dd>
+          <p id="productDescription"></p>
+        </dd>
+
+        <dt>Cantidad de vendidos</dt>
+        <dd>
+          <p id="productPurchases"></p>
+        </dd>
+
+        <dt>Precio</dt>
+        <dd>
+          <p id="productPrice"></p>
+        </dd>
+
+        <dt>Imágenes ilustrativas</dt>
+        <dd>
+          <div class="row text-center text-lg-left pt-2" id="productImages">
+          </div>
+        </dd>
+      </dl>
+      <a type="button" class="btnbuy btn btn-primary btn-lg btn-block" href="#">COMPRAR</a>
     </div>
-  </div>
-  <footer class="text-muted">
+    <hr class="comments-division">
+    <p id="comment-amount">Comentarios</p>
+    <div class="create-comment">
+      <!-- <form action="#"> -->
+        <input type="text" class="newcomment" id="insertcomment" name="insertcomment" placeholder="Agrega un comentario...">
+        <hr class="newcomment-bar" style="margin-bottom: 150px;">
+        <!-- TODO: Star rating system -->
+        <div class="star-rating">
+          <label class="rating-name" for="rating-group" style="margin-top: 15px;">Selecciona un puntaje...</label>
+          <hr class="newcomment-bar" style="margin-top: 40px;">
+
+          <div id="full-stars-example-two">
+            <div class="rating-group" name = "rating-group">
+                <input disabled checked class="rating__input rating__input--none" name="rating3" id="rating3-none" value="0" type="radio">
+                <label aria-label="1 star" class="rating__label" for="rating3-1"><i class="rating__icon rating__icon--star bi bi-star-fill"></i></label>
+                <input class="rating__input" name="rating3" id="rating3-1" value="1" type="radio">
+                <label aria-label="2 stars" class="rating__label" for="rating3-2"><i class="rating__icon rating__icon--star bi bi-star-fill"></i></label>
+                <input class="rating__input" name="rating3" id="rating3-2" value="2" type="radio">
+                <label aria-label="3 stars" class="rating__label" for="rating3-3"><i class="rating__icon rating__icon--star bi bi-star-fill"></i></label>
+                <input class="rating__input" name="rating3" id="rating3-3" value="3" type="radio">
+                <label aria-label="4 stars" class="rating__label" for="rating3-4"><i class="rating__icon rating__icon--star bi bi-star-fill"></i></label>
+                <input class="rating__input" name="rating3" id="rating3-4" value="4" type="radio">
+                <label aria-label="5 stars" class="rating__label" for="rating3-5"><i class="rating__icon rating__icon--star bi bi-star-fill"></i></label>
+                <input class="rating__input" name="rating3" id="rating3-5" value="5" type="radio">
+            </div>
+        </div>
+        </div>
+        <div class="submit-comment">
+          <!-- Add type submit to button to make it work as a form (and disable form comments) -->
+           <button value="ENVIAR" class="newcomment-submit btn btn-primary" onclick="addComment();"> 
+            ENVIAR  
+            <i style="margin-left: 6px;" class="bi bi-arrow-right"></i>         
+           </button>
+        </div>
+      
+      <!-- </form> -->
+    </div>
+    <div id="comment-section" class="comments">
+    </div>
+    
+
+  </main>
+  <footer class="text-muted" id="page-bottom">
     <div class="container">
       <p class="float-right">
         <a href="#">Volver arriba</a>
