@@ -50,6 +50,10 @@ function getRating()
 
 function addComment()
 {
+	
+    let previousComments = document.getElementById("comment-section").innerHTML;
+    let newComments = "";
+
     let currentComment = "";
     let name = localStorage.getItem('username');
     let message = document.getElementById("insertcomment");
@@ -77,10 +81,13 @@ function addComment()
             <div class="comment-text">`+message.value+`</div>
             <div class="comment-score">`+generateStars(rating)+`</div><br>
         </div>`;
+
+        newComments += currentComment;
+        newComments += previousComments;
         
-        document.getElementById("comment-section").innerHTML += currentComment;
-        let pageBottom = document.querySelector("#page-bottom")
-        pageBottom.scrollIntoView()
+        document.getElementById("comment-section").innerHTML = newComments;
+        let commentList = document.querySelector("#send-button");
+        commentList.scrollIntoView();
     }
 
     //Clean old comment values
