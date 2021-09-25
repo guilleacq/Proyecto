@@ -56,16 +56,46 @@ function loadUsername()
 
   if (nombreUsuario.length > 10)
   {
+    div[0].innerHTML += `<div class="dropdown show">
+    <a class="btn btn-secondary dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+      `+nombreUsuarioTexto+`...
+    </a>
+  
+    <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+      <a class="dropdown-item" href="cart.html">Ver mi carrito</a>
+      <a class="dropdown-item" href="my-profile.html">Mi perfil</a>
+      <a class="dropdown-item" href="index.html">Cerrar sesión</a>
+    </div>
+  </div>`;
+  }
+  else
+  {
+    div[0].innerHTML += `<div class="dropdown show">
+    <a class="btn btn-secondary dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+      `+nombreUsuarioTexto+`
+    </a>
+  
+    <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+      <a class="dropdown-item" href="cart.html">Ver mi carrito</a>
+      <a class="dropdown-item" href="my-profile.html">Mi perfil</a>
+      <a class="dropdown-item" href="index.html">Cerrar sesión</a>
+    </div>
+  </div>`;
+
+  }
+
+
+}
+
+
+/* Original code for username top right
+
+  if (nombreUsuario.length > 10)
+  {
     div[0].innerHTML += `<div onclick="location.href='my-profile.html';" style="cursor: pointer;" class="user-nav"><i class="bi bi-person"></i><a class="py-2 d-none d-md-inline-block" href="#">`+nombreUsuarioTexto+'...'+`</a></div>`;
   }
   else
   {
     div[0].innerHTML += `<div onclick="location.href='my-profile.html';" style="cursor: pointer;" class="user-nav"><i class="bi bi-person"></i><a class="py-2 d-none d-md-inline-block" href="#">`+nombreUsuarioTexto+`</a></div>`;
   }
-
-
-  
-
-
-
-}
+  */

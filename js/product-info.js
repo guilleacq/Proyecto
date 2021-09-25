@@ -19,6 +19,35 @@ function showImagesGallery(array){
     }
 }
 
+
+function showRecommendations(productArray, recommendationArray) //Funcion que muestra recomendaciones de productos
+{
+    let htmlContentToAppend = "";
+
+    for (let i = 0; i < recommendationArray.length; i++) //Hacer para cada recomendacion..
+    {
+        recommendation = recommendationArray[i]; //Guardar en "recommendation" la posicion del producto de la recomendacion
+        htmlContentToAppend += `
+        <div class="col-lg-3 col-md-4 col-6">
+            <div class="d-block mb-4 h-100">
+                    <a href="product-info.html">
+                        <div class="rec-container">
+                            <img class="recommended-image img-fluid img-thumbnail" src="`+productArray[recommendation].imgSrc+`" alt="car recommendation">
+                            <div class="text-block">
+                            <p>`+productArray[recommendation].name+`<p>
+                            </div>
+                        </div>
+                    </a>
+            </div>
+        </div>
+        `
+    }
+
+    document.getElementById("recommended-products").innerHTML = htmlContentToAppend;
+}
+
+
+
 function generateStars(stars)
 {
     let htmlContent = "";
@@ -176,8 +205,21 @@ document.addEventListener("DOMContentLoaded", function(e){
             
             displayDefaultComments(comments);
         
-
+            loadProducts();
 
         }
     });
 });
+
+    document.addEventListener("DOMContentLoaded", function(e){              // Load other products after loading current one
+        getJSONData(PRODUCTS_URL).then(function(resultObj){
+            if (resultObj.status === "ok")
+            {
+                products = resultObj.data;
+                showRecommendations(products, product.relatedProducts); // Muestra las recomendaciones dada la lista de productos y el producto actual
+            
+    
+    
+            }
+        });
+    });

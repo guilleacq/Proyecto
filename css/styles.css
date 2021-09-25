@@ -208,12 +208,45 @@ footer p {
   width: 44px;
 }
 
+.recommended-image
+{
+  width: 300px;
+}
+
 
 .comments-division
 {
   margin-top: 100px;
   margin-bottom: 25px;
 }
+
+.recommendations-p
+{
+  margin-top: 120px;
+}
+
+.rec-container {
+  position: relative;
+}
+
+a:hover .text-block {
+  background-color: rgba(24, 24, 24, 0.92);
+}
+
+
+.text-block {
+  position: absolute;
+  bottom: 10px;
+  right: 10px;
+  background-color: rgba(24, 24, 24, 0.6);
+  border-radius: 7%;
+  color: white;
+  padding-left: 20px;
+  padding-top: 3px;
+  padding-right: 20px;
+}
+
+
 
 
 .user-nav:hover
