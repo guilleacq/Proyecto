@@ -192,34 +192,33 @@ document.addEventListener("DOMContentLoaded", function(e){
 
             //Muestro las imagenes en forma de galería
             showImagesGallery(product.images);
-        }
-    });
-});
 
 
-document.addEventListener("DOMContentLoaded", function(e){
-    getJSONData(PRODUCT_INFO_COMMENTS_URL).then(function(resultObj){
-        if (resultObj.status === "ok")
-        {
-            comments = resultObj.data;
-            
-            displayDefaultComments(comments);
+            getJSONData(PRODUCT_INFO_COMMENTS_URL).then(function(resultObj){
+                if (resultObj.status === "ok")
+                {
+                    comments = resultObj.data;
+                    
+                    displayDefaultComments(comments);
+                
+                    loadProducts();
         
-            loadProducts();
+                }
+            });
+
+
+            getJSONData(PRODUCTS_URL).then(function(resultObj){
+                if (resultObj.status === "ok")
+                {
+                    products = resultObj.data;
+                    showRecommendations(products, product.relatedProducts); // Muestra las recomendaciones dada la lista de productos y el producto actual
+                
+        
+        
+                }
+            });
 
         }
     });
 });
 
-    document.addEventListener("DOMContentLoaded", function(e){              // Load other products after loading current one
-        getJSONData(PRODUCTS_URL).then(function(resultObj){
-            if (resultObj.status === "ok")
-            {
-                products = resultObj.data;
-                showRecommendations(products, product.relatedProducts); // Muestra las recomendaciones dada la lista de productos y el producto actual
-            
-    
-    
-            }
-        });
-    });
