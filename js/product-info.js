@@ -19,6 +19,33 @@ function showImagesGallery(array){
     }
 }
 
+function showImagesCarousel(array){
+
+    let htmlContentToAppend = "";
+
+    for(let i = 0; i < array.length; i++){
+        let imageSrc = array[i];
+
+        if (i == 0)
+        {
+            htmlContentToAppend += `
+            <div class="carousel-item active">
+                <img class="d-block w-100" src="`+imageSrc+`" alt="foto">
+            </div>`;
+        }
+        else
+        {
+            htmlContentToAppend += `
+            <div class="carousel-item">
+                <img class="d-block w-100" src="`+imageSrc+`" alt="foto">
+            </div>`;
+        }
+
+
+    }
+    document.getElementById("images-carousel").innerHTML = htmlContentToAppend;
+}
+
 
 function showRecommendations(productArray, recommendationArray) //Funcion que muestra recomendaciones de productos
 {
@@ -191,7 +218,7 @@ document.addEventListener("DOMContentLoaded", function(e){
             productPriceHTML.innerHTML += " "+product.currency;
 
             //Muestro las imagenes en forma de galería
-            showImagesGallery(product.images);
+            showImagesCarousel(product.images);
 
 
             getJSONData(PRODUCT_INFO_COMMENTS_URL).then(function(resultObj){
@@ -201,7 +228,6 @@ document.addEventListener("DOMContentLoaded", function(e){
                     
                     displayDefaultComments(comments);
                 
-                    loadProducts();
         
                 }
             });
