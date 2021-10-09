@@ -87,6 +87,12 @@ footer p {
   }
 }
 
+.product-cart
+{
+  margin: auto;
+  width: 50%;
+}
+
 .comment-title
 {
   position: relative;
