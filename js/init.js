@@ -76,9 +76,9 @@ function loadUsername()
     </a>
   
     <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
-      <a class="dropdown-item" href="cart.html">Ver mi carrito</a>
-      <a class="dropdown-item" href="my-profile.html">Mi perfil</a>
-      <a class="dropdown-item" href="index.html" onclick="localStorage.clear();">Cerrar sesión</a>
+      <a class="dropdown-item" href="cart.html"><i class="bi bi-cart" style="padding-right: 5px";></i> Ver mi carrito</a>
+      <a class="dropdown-item" href="my-profile.html"><i class="bi bi-person" style="padding-right: 5px"></i>Mi perfil</a>
+      <a class="dropdown-item" href="index.html" onclick="localStorage.clear();"><i class="bi bi-door-open" style="padding-right: 5px"></i> </i>Cerrar sesión</a>
     </div>
   </div>`;
 

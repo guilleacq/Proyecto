@@ -4,8 +4,12 @@ let productosCarrito=[];
 
 
 //Funcion que actualiza el subtotal cuando cambia la cantidad. precio (int), cantidad (int), subtotalId (id)
-function updateProductoSubtotal(precio, cantidad, subtotalId){
-    document.getElementById(subtotalId).innerHTML = cantidad*precio;
+function updateProductoSubtotal(precio, cantidad, subtotalId, tipoMoneda){
+    if (tipoMoneda == "USD")
+        document.getElementById(subtotalId).innerHTML = cantidad*precio * 43;
+    else
+        document.getElementById(subtotalId).innerHTML = cantidad*precio;
+
     updateTotalPrice();
 }
 
@@ -33,14 +37,17 @@ function showCarrito(){ //Muestra el carrito cargando elemento por elemento desd
     
     for(let article of productosCarrito){ //Carga elemento por elemento
 
-        subtotalPrice = parseInt(article.unitCost) * parseInt(article.count); //Hace el calculo del subtotal inicial
+        if (article.currency == "USD")
+            subtotalPrice = parseInt(article.unitCost) * parseInt(article.count) * 43; //Hace el calculo del subtotal inicial para usd
+        else 
+            subtotalPrice = parseInt(article.unitCost) * parseInt(article.count); //Hace el calculo del subtotal inicial para pesos
     
         htmlToAppend += `
         <tr>
         <td><img src="${article.src}" class = "img-fluid" style ="max-width:50px!important"></td>
         <td class="align-middle">${article.name}</td>
         <td class="align-middle">${article.currency} ${article.unitCost}</td>
-        <td class="align-middle"><input type="number" min ="1" onchange="updateProductoSubtotal(this.value, ${article.unitCost}, ${id})" value=${article.count}></td>
+        <td class="align-middle"><input type="number" min ="1" onchange="updateProductoSubtotal(this.value, ${article.unitCost}, ${id}, '${article.currency}');" value=${article.count}></td>
         <td class="subt align-middle" id="${id}">${subtotalPrice}</td>
         </tr>`
         id++;              
@@ -80,7 +87,7 @@ function updateTotalPrice()
 }
 
 document.addEventListener("DOMContentLoaded", function(e){ //Cuando se carga la pagina.. carga el JSON
-    getCarrito(CART_INFO_URL)
+    getCarrito("https://japdevdep.github.io/ecommerce-api/cart/654.json")
     .then(respuesta=>{
         productosCarrito = respuesta.articles; //Guarda los articulos del carrito en productosCarrito
         showCarrito(); 
