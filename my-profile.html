@@ -35,22 +35,106 @@
 </head>
 
 <body>
-  <nav class="site-header sticky-top py-1 bg-dark">
-    <div name="menu-top" class="container d-flex flex-column flex-md-row justify-content-between">
-      <a class="py-2 d-none d-md-inline-block" href="main.html">Inicio</a>
-      <a class="py-2 d-none d-md-inline-block" href="categories.html">Categorías</a>
-      <a class="py-2 d-none d-md-inline-block" href="products.html">Productos</a>
-      <a class="py-2 d-none d-md-inline-block" href="sell.html">Vender</a>
+
+  <nav class="navbar navbar-expand-sm navbar-light bg-light navbar-custom">
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div id="navbarNavDropdown" class="collapse navbar-collapse">
+      <ul class="navbar-nav nav-fill w-100 elementsnav">
+        <li class="nav-item">
+          <a class="nav-link" href="main.html">Inicio</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="categories.html">Categorías</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="products.html">Productos</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="sell.html">Vender</a>
+        </li>
+      </ul>
     </div>
   </nav>
-  <div class="container p-5">
-    <div class="alert alert-danger" role="alert" style="position: relative; width:auto; top: 0;">
-      <h4 class="alert-heading">¡A trabajar! :)</h4>
-      <p>Esta sección corresponde a: Entrega 6 (Fecha de entrega: 31/10/2021).</p>
-      <hr>
-      <p class="mb-0">Para saber qué debes hacer, fijate en la actividad en CREA correspondiente a esta entrega.</p>
+
+
+
+
+  
+
+
+  <main role="main" class="pb-5">
+    <div class="text-center p-4">
+      <h2>Mi perfil</h2>
+      <p class="lead">Aqui se mostrarán los datos de tu perfil</p>
     </div>
-  </div>
+
+    <div class="container">
+      <div id="finaldatos" class="row">
+        <div class="col">
+          <div class="usercard card mx-auto text-center" style="width: 50%;">
+            <div class="card-body">
+              <h5 id="loaded-nombre" class="card-title"><b>Nombre</b></h5>
+            </div>
+            <ul class="list-group list-group-flush">
+              <li id="loaded-edad" class="list-group-item">Edad</li>
+              <li id="loaded-email" class="list-group-item">Correo electrónico</li>
+              <li id="loaded-telefono" class="list-group-item">Teléfono</li>
+            </ul>
+            <div class="card-body text-center">
+              <a href="index.html" onclick="localStorage.clear();">Cerrar Sesión</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div id="titulodatos"class="row" style="padding-top: 60px;">
+        <div class="col text-center">
+          <h4>Datos Personales</h4>
+        </div>
+      </div>
+
+      <form id="usercuestionario" action="#" name="submitprofileinfo" onsubmit ="return verifyProfileInfo()">
+        <div class="form-group">
+          <div class="row" style="padding-top: 10px;">
+            <div class="col">
+              <label for="nombrecompletouser" class="form-label">Nombre</label>
+              <input class="form-control" id="nombrecompletouser" name="nombrecompletou" placeholder="Nombre Completo">
+            </div>
+          </div>
+          <div class="row" style="padding-top: 30px;">
+            <div class="col">
+              <label for="edaduser" class="form-label">Edad</label> 
+              <input class="form-control" type="number" id="edaduser" min ="1" max="130" name="edadu" placeholder="Edad" value="18">
+            </div>
+          </div>
+          <div class="row" style="padding-top: 30px;">
+            <div class="col">
+              <label for="emailuser" class="form-label">Correo Electrónico</label>
+              <input type="email" class="form-control" id="emailuser" name="emailu" placeholder="Correo Electrónico">
+            </div>
+          </div>
+          <div class="row" style="padding-top: 30px;">
+            <div class="col">
+              <label for="telefonouser" class="form-label">Telefono</label>
+              <input class="form-control" id="telefonouser" telefono="telefonou" placeholder="Teléfono">
+            </div>
+          </div>
+          <div class="row" style="padding-top: 50px;">
+            <div class="col text-center">
+              <button type="submit" class="btn btn-primary" style="width: 8rem;">Guardar</button>
+            </div>
+          </div>
+        </div>
+      </form>
+
+
+  </main>
+
+
+
+
   <footer class="text-muted bg-light">
     <div class="container">
       <p>Este sitio forma parte de Desarrollo Web - JAP - 2020</p>
@@ -73,6 +157,7 @@
   </div>
   <script src="js/jquery-3.4.1.min.js"></script>
   <script src="js/bootstrap.bundle.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
   <script src="js/dropzone.js"></script>
   <script src="js/init.js"></script>
   <script src="js/my-profile.js"></script>

@@ -47,30 +47,46 @@ document.addEventListener("DOMContentLoaded", function(e){
   loadUsername();
 });
 
+function isEmail(emailAddr)
+{
+    var emailsArray = emailAddr.match(/([a-zA-Z0-9._-]+@[a-zA-Z0-9._-]+\.[a-zA-Z0-9._-]+)/gi);
+    return (emailsArray != null && emailsArray.length);
+}
 
 function loadUsername()
 {
-  var div = document.getElementsByName('menu-top');
+  var nav = document.getElementsByClassName('elementsnav');
   var nombreUsuario = localStorage.getItem('username');
   var nombreUsuarioTexto = nombreUsuario.slice(0, 10);
 
   if (nombreUsuario.length > 10)
   {
-    div[0].innerHTML += `<div class="dropdown show">
+    /*nav[0].innerHTML += `<div class="dropdown show">
     <a class="btn btn-secondary dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
       `+nombreUsuarioTexto+`...
     </a>
   
     <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
-      <a class="dropdown-item" href="cart.html">Ver mi carrito</a>
-      <a class="dropdown-item" href="my-profile.html">Mi perfil</a>
-      <a class="dropdown-item" href="index.html" onclick="localStorage.clear();">Cerrar sesión</a>
+    <a class="dropdown-item" href="cart.html"><i class="bi bi-cart" style="padding-right: 5px";></i> Ver mi carrito</a>
+    <a class="dropdown-item" href="my-profile.html"><i class="bi bi-person" style="padding-right: 5px"></i>Mi perfil</a>
+    <a class="dropdown-item" href="index.html" onclick="localStorage.clear();"><i class="bi bi-door-open" style="padding-right: 5px"></i> </i>Cerrar sesión</a>
     </div>
-  </div>`;
+  </div>`;*/
+  nav[0].innerHTML += `<li class="nav-item dropdown">
+  <a class="nav-link dropdown-toggle" href="#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+  `+nombreUsuarioTexto+"..."+`
+  </a>
+  <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+  <a class="dropdown-item" href="my-profile.html"><i class="bi bi-person" style="padding-right: 5px"></i>Mi perfil</a>
+  <a class="dropdown-item" href="cart.html"><i class="bi bi-cart" style="padding-right: 5px";></i> Ver mi carrito</a>
+  <a class="dropdown-item" href="index.html" onclick="localStorage.clear();"><i class="bi bi-door-open" style="padding-right: 5px"></i> </i>Cerrar sesión</a>
+  </div>
+  </li>`;
+
   }
   else
   {
-    div[0].innerHTML += `<div class="dropdown show">
+    /*nav[0].innerHTML += `<div class="dropdown show">
     <a class="btn btn-secondary dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
       `+nombreUsuarioTexto+`
     </a>
@@ -80,7 +96,17 @@ function loadUsername()
       <a class="dropdown-item" href="my-profile.html"><i class="bi bi-person" style="padding-right: 5px"></i>Mi perfil</a>
       <a class="dropdown-item" href="index.html" onclick="localStorage.clear();"><i class="bi bi-door-open" style="padding-right: 5px"></i> </i>Cerrar sesión</a>
     </div>
-  </div>`;
+  </div>`;*/
+  nav[0].innerHTML += `<li class="nav-item dropdown">
+    <a class="nav-link dropdown-toggle" href="#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+    `+nombreUsuarioTexto+`
+    </a>
+    <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+    <a class="dropdown-item" href="my-profile.html"><i class="bi bi-person" style="padding-right: 5px"></i>Mi perfil</a>
+    <a class="dropdown-item" href="cart.html"><i class="bi bi-cart" style="padding-right: 5px";></i> Ver mi carrito</a>
+    <a class="dropdown-item" href="index.html" onclick="localStorage.clear();"><i class="bi bi-door-open" style="padding-right: 5px"></i> </i>Cerrar sesión</a>
+    </div>
+    </li>`;
 
   }
 

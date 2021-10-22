@@ -1,4 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300&display=swap');
 
 .jumbotron, .card-body, .container, .site-header{
     font-family: 'Raleway', serif !important;
@@ -7,6 +8,46 @@
 .jumbotron .display-4{
     font-weight: bold;
 }
+
+/* ESTILOS DEL NAV */
+
+
+.navbar-custom {
+  background: #2d2e33!important;
+}
+/* change the brand and text color */
+.navbar-custom .navbar-brand,
+.navbar-custom .navbar-text {
+  color: #edf0f1!important;
+  transition: all 0.3s easy 0s;
+}
+/* change the link color */
+.navbar-custom .navbar-nav .nav-link {
+  color: #edf0f1!important;
+  
+}
+
+.navbar-custom:hover .navbar-nav:hover .nav-link:hover{
+  color: #c2c2c2!important;
+  transform: scale(1.1, 1.1);
+}
+
+.navbar-custom:active .navbar-nav:active .nav-link:active {
+  color: #5f5f5f!important;
+}
+/* change the color of active or hovered links */
+.navbar-custom .nav-item.active .nav-link,
+.navbar-custom .nav-item:hover .nav-link {
+  color: #ffffff!important;
+}
+
+
+
+
+
+
+
+
 
 html
 {
@@ -85,6 +126,29 @@ footer p {
   {
     visibility: hidden;
   }
+
+}
+
+
+.escondida
+{
+  display: none;
+}
+
+.usercard
+{
+  box-shadow: 1px 3px 6px -3px rgba(0,0,0,0.77);
+  -webkit-box-shadow: 1px 3px 6px -3px rgba(0,0,0,0.77);
+  -moz-box-shadow: 1px 3px 6px -3px rgba(0,0,0,0.77);
+  transition: 0.18s;
+}
+
+.usercard:hover
+{
+  box-shadow: 1px 3px 18px -9px rgba(0,0,0,0.79);
+  -webkit-box-shadow: 1px 3px 18px -9px rgba(0,0,0,0.79);
+  -moz-box-shadow: 1px 3px 18px -9px rgba(0,0,0,0.79);
+  transform: scale(1.01, 1.01);
 }
 
 .product-cart

@@ -35,25 +35,34 @@
 </head>
 
 <body>
-  <nav class="site-header sticky-top py-1 bg-dark">
-    <div name="menu-top" class="container d-flex flex-column flex-md-row justify-content-between">
-      <a class="py-2 d-none d-md-inline-block" href="main.html">Inicio</a>
-      <a class="py-2 d-none d-md-inline-block" href="categories.html">Categorías</a>
-      <a class="py-2 d-none d-md-inline-block" href="products.html">Productos</a>
-      <a class="py-2 d-none d-md-inline-block" href="sell.html">Vender</a>
+  <nav class="navbar navbar-expand-sm navbar-light bg-light navbar-custom">
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div id="navbarNavDropdown" class="collapse navbar-collapse">
+      <ul class="navbar-nav nav-fill w-100 elementsnav">
+        <li class="nav-item">
+          <a class="nav-link" href="main.html">Inicio</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="categories.html">Categorías</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="products.html">Productos</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="sell.html">Vender</a>
+        </li>
+      </ul>
     </div>
   </nav>
-
-<!-- REVISAR TODO ESTO -->
-
-
 
     <main role="main" class="pb-5">
       <div class="text-center p-4">
         <h2>Mi Carrito</h2>
         <p class="lead">Aqui se mostrarán los productos en tu carrito.</p>
       </div>
-    </main>
+
 
     <div class="container">
       <table class="table">
@@ -128,9 +137,7 @@
 
 
 </form>
-
-
-    <!-- REVISAR ESTO DE ARRIBA -->
+</main>
 
 
 
