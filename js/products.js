@@ -62,7 +62,7 @@ function showProductsList(){
 
         if (((minPrice == undefined) || (minPrice != undefined && parseInt(product.cost) >= minPrice)) &&
             ((maxPrice == undefined) || (maxPrice != undefined && parseInt(product.cost) <= maxPrice))){
-
+/*
             htmlContentToAppend += `
             <a href="product-info.html" class="list-group-item list-group-item-action">
                 <div class="row">
@@ -80,7 +80,20 @@ function showProductsList(){
                 </div>
             </a>
             `
+            */
+             htmlContentToAppend += `
+                 <div class="col-md-4">
+                   <a href="product-info.html" class="card mb-4 shadow-sm custom-card product-card">
+                     <img class="bd-placeholder-img card-img-top" style="border-radius: 5%;" src=${product.imgSrc}>
+                     <h3 class="m-3">${product.name}</h3>
+                       <p class="card-text">${product.description}</p>
+                       <h5 class="card-subtitle mb-2 text-muted" style="margin-top: 3px; "><b>${product.cost} ${product.currency}</b></h5>
+                       <h8 class="card-subtitle mb-2 text-muted" style="font-size: smaller; margin-top: 15px;">${product.soldCount} vendidos</h8>
+                   </a>
+                 </div>`;   
         }
+        
+            htmlContentToAppend += "</div>";
             document.getElementById("prod-list-container").innerHTML = htmlContentToAppend;
     
     }

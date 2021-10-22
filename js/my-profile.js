@@ -61,8 +61,8 @@ function getUserinfo()
         document.getElementById("loaded-email").innerHTML = info["infoEmail"];
         document.getElementById("loaded-telefono").innerHTML = info["infoTelefono"];
 
-        document.getElementById("usercuestionario").style = "display: none;";
-        document.getElementById("titulodatos").style = "display: none;";
+        //document.getElementById("usercuestionario").style = "display: none;";
+        //document.getElementById("titulodatos").style = "display: none;";
     }
 
 }
