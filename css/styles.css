@@ -11,42 +11,33 @@
 
 /* ESTILOS DEL NAV */
 
-
 .navbar-custom {
-  background: #2d2e33!important;
+  /*background: #4dc0ee!important;*/
+  background: linear-gradient(to bottom right, #33ccff 0%, #00ff99 112%);
+  box-shadow: 1px 1px 4px 0px rgba(0,0,0,0.61);
+  -webkit-box-shadow: 1px 1px 4px 0px rgba(0,0,0,0.61);
+  -moz-box-shadow: 1px 1px 4px 0px rgba(0,0,0,0.61);
+  
 }
 /* change the brand and text color */
 .navbar-custom .navbar-brand,
 .navbar-custom .navbar-text {
-  color: #edf0f1!important;
+  color: rgb(17, 88, 67)!important;
   transition: all 0.3s easy 0s;
 }
 /* change the link color */
 .navbar-custom .navbar-nav .nav-link {
-  color: #edf0f1!important;
-  
+  color: rgb(13, 85, 63)!important;
 }
 
 .navbar-custom:hover .navbar-nav:hover .nav-link:hover{
-  color: #c2c2c2!important;
+  color: rgb(1, 54, 36)!important;
   transform: scale(1.1, 1.1);
 }
 
 .navbar-custom:active .navbar-nav:active .nav-link:active {
-  color: #5f5f5f!important;
+  color: rgb(0, 0, 0)!important;
 }
-/* change the color of active or hovered links */
-.navbar-custom .nav-item.active .nav-link,
-.navbar-custom .nav-item:hover .nav-link {
-  color: #ffffff!important;
-}
-
-
-
-
-
-
-
 
 
 html
@@ -59,7 +50,7 @@ html
   padding: 5em inherit;
   margin-bottom: 0;
   background-color: #53C0FB;
-  background: url('../img/cover_back.png');
+  background: url('../img/ecommerce.png');
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;

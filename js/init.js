@@ -61,42 +61,20 @@ function loadUsername()
 
   if (nombreUsuario.length > 10)
   {
-    /*nav[0].innerHTML += `<div class="dropdown show">
-    <a class="btn btn-secondary dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-      `+nombreUsuarioTexto+`...
+    nav[0].innerHTML += `<li class="nav-item dropdown">
+    <a class="nav-link dropdown-toggle" href="#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+    `+nombreUsuarioTexto+"..."+`
     </a>
-  
-    <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
-    <a class="dropdown-item" href="cart.html"><i class="bi bi-cart" style="padding-right: 5px";></i> Ver mi carrito</a>
+    <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
     <a class="dropdown-item" href="my-profile.html"><i class="bi bi-person" style="padding-right: 5px"></i>Mi perfil</a>
+    <a class="dropdown-item" href="cart.html"><i class="bi bi-cart" style="padding-right: 5px";></i> Ver mi carrito</a>
     <a class="dropdown-item" href="index.html" onclick="localStorage.clear();"><i class="bi bi-door-open" style="padding-right: 5px"></i> </i>Cerrar sesión</a>
     </div>
-  </div>`;*/
-  nav[0].innerHTML += `<li class="nav-item dropdown">
-  <a class="nav-link dropdown-toggle" href="#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-  `+nombreUsuarioTexto+"..."+`
-  </a>
-  <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-  <a class="dropdown-item" href="my-profile.html"><i class="bi bi-person" style="padding-right: 5px"></i>Mi perfil</a>
-  <a class="dropdown-item" href="cart.html"><i class="bi bi-cart" style="padding-right: 5px";></i> Ver mi carrito</a>
-  <a class="dropdown-item" href="index.html" onclick="localStorage.clear();"><i class="bi bi-door-open" style="padding-right: 5px"></i> </i>Cerrar sesión</a>
-  </div>
-  </li>`;
+    </li>`;
 
   }
   else
   {
-    /*nav[0].innerHTML += `<div class="dropdown show">
-    <a class="btn btn-secondary dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-      `+nombreUsuarioTexto+`
-    </a>
-  
-    <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
-      <a class="dropdown-item" href="cart.html"><i class="bi bi-cart" style="padding-right: 5px";></i> Ver mi carrito</a>
-      <a class="dropdown-item" href="my-profile.html"><i class="bi bi-person" style="padding-right: 5px"></i>Mi perfil</a>
-      <a class="dropdown-item" href="index.html" onclick="localStorage.clear();"><i class="bi bi-door-open" style="padding-right: 5px"></i> </i>Cerrar sesión</a>
-    </div>
-  </div>`;*/
   nav[0].innerHTML += `<li class="nav-item dropdown">
     <a class="nav-link dropdown-toggle" href="#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
     `+nombreUsuarioTexto+`
@@ -107,21 +85,21 @@ function loadUsername()
     <a class="dropdown-item" href="index.html" onclick="localStorage.clear();"><i class="bi bi-door-open" style="padding-right: 5px"></i> </i>Cerrar sesión</a>
     </div>
     </li>`;
-
+    
+        /*OLD CODE
+    
+    nav[0].innerHTML += `<div class="dropdown show">
+    <a class="btn btn-secondary dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+      `+nombreUsuarioTexto+`
+    </a>
+  
+    <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+      <a class="dropdown-item" href="cart.html"><i class="bi bi-cart" style="padding-right: 5px";></i> Ver mi carrito</a>
+      <a class="dropdown-item" href="my-profile.html"><i class="bi bi-person" style="padding-right: 5px"></i>Mi perfil</a>
+      <a class="dropdown-item" href="index.html" onclick="localStorage.clear();"><i class="bi bi-door-open" style="padding-right: 5px"></i> </i>Cerrar sesión</a>
+    </div>
+  </div>`;*/
   }
 
 
 }
-
-
-/* Original code for username top right
-
-  if (nombreUsuario.length > 10)
-  {
-    div[0].innerHTML += `<div onclick="location.href='my-profile.html';" style="cursor: pointer;" class="user-nav"><i class="bi bi-person"></i><a class="py-2 d-none d-md-inline-block" href="#">`+nombreUsuarioTexto+'...'+`</a></div>`;
-  }
-  else
-  {
-    div[0].innerHTML += `<div onclick="location.href='my-profile.html';" style="cursor: pointer;" class="user-nav"><i class="bi bi-person"></i><a class="py-2 d-none d-md-inline-block" href="#">`+nombreUsuarioTexto+`</a></div>`;
-  }
-  */
