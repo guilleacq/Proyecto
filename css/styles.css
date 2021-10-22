@@ -13,10 +13,12 @@
 
 .navbar-custom {
   /*background: #4dc0ee!important;*/
-  background: linear-gradient(to bottom right, #33ccff 0%, #00ff99 112%);
+  /*background: linear-gradient(to bottom right, #33ccff 0%, #00ff99 112%);*/
+  background-color: rgb(224, 224, 224);
   box-shadow: 1px 1px 4px 0px rgba(0,0,0,0.61);
   -webkit-box-shadow: 1px 1px 4px 0px rgba(0,0,0,0.61);
   -moz-box-shadow: 1px 1px 4px 0px rgba(0,0,0,0.61);
+  border-radius: 0px 0px 13px 13px; 
   
 }
 /* change the brand and text color */
