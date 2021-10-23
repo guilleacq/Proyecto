@@ -7,6 +7,7 @@ const PRODUCT_INFO_COMMENTS_URL = "https://japdevdep.github.io/ecommerce-api/pro
 const CART_INFO_URL = "https://japdevdep.github.io/ecommerce-api/cart/987.json";
 const CART_BUY_URL = "https://japdevdep.github.io/ecommerce-api/cart/buy.json";
 const checkbox = document.getElementById("chk"); //dark theme checkbox
+var darkMode = localStorage.getItem("modoOscuro");
 
 var showSpinner = function(){
   document.getElementById("spinner-wrapper").style.display = "block";
@@ -46,6 +47,17 @@ var getJSONData = function(url){
 //elementos HTML presentes.
 document.addEventListener("DOMContentLoaded", function(e){
   loadUsername();
+  if (localStorage.getItem("modoOscuro") == 'enabled')
+  {
+    document.body.classList.add("dark");
+  }
+  else
+  {
+    document.body.classList.remove("dark");
+  }
+
+
+
 });
 
 function isEmail(emailAddr)
@@ -105,9 +117,19 @@ function loadUsername()
 
   checkbox.addEventListener('change', () => 
   { //Change website theme
-    document.body.classList.toggle('dark');
-  
-  
+    if (darkMode)
+    {
+      document.body.classList.remove("dark");
+      darkMode = null;
+    }
+    else
+    {
+      document.body.classList.add("dark");
+      darkMode = 'enabled';
+    }
+
+    localStorage.setItem("modoOscuro", darkMode);
+
   }); 
 
 

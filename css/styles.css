@@ -484,7 +484,7 @@ a.custom-card:hover {
 .darkthemelabel
 {
   margin-left: 200px;
-  background-color: #111;
+  background-color: rgb(10, 10, 10);
   border-radius: 50px;
   box-sizing: border-box;
   cursor: pointer;
@@ -528,17 +528,7 @@ a.custom-card:hover {
 
 .checkboxdark:checked + .darkthemelabel
 {
-  background-color: rgb(47, 127, 255);
-}
-
-.bi-brightness-high
-{
-  color: white;
-}
-
-.bi-moon
-{
-  color: white;
+  background-color: rgb(21, 115, 238);
 }
 
 body
@@ -551,6 +541,12 @@ body.dark
   background-color: #33363d;
 }
 
+body.dark footer
+{
+  background-color: #33363d!important;
+}
+
+
 body.dark .custom-card
 {
   background-color: #1e2129;
@@ -561,16 +557,28 @@ body.dark .custom-card *
   color: rgb(202, 202, 202);
 }
 
-body.dark .darkable-button
+body.dark :is(h1, h2, h3, h4, h5, h6)
 {
-  background-color: #1e2129;
-  color: rgb(202, 202, 202);
+  color: rgb(230, 230, 230);
+}
+
+body.dark :is(p, label, .tabletext) 
+{
+  color: rgb(192, 192, 192);
+}
+
+
+body.dark :is(.darkable-button, button, input)
+{
+  background: none;
+  background-color: #1e2129!important;
+  color: rgb(202, 202, 202)!important;
   border: #1e2129;
 }
 
 body.dark .darkable
 {
-  background-color: #22242c !important;
+  background-color: #33363d !important;
 }
 
 body.dark .custom-toggler.navbar-toggler

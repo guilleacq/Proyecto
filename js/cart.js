@@ -22,7 +22,7 @@ function showTotal()
     <td class="align-middle"></td>
     <td class="align-middle"></td>
     <td class="align-middle"></td>
-    <td class="align-middle"><b>Total</b> <p id="total"> </p></td>
+    <td class="align-middle tabletext"><b>Total</b> <p id="total"> </p></td>
     </tr>`
 
 
@@ -44,11 +44,11 @@ function showCarrito(){ //Muestra el carrito cargando elemento por elemento desd
     
         htmlToAppend += `
         <tr>
-        <td><img src="${article.src}" class = "img-fluid" style ="max-width:50px!important"></td>
-        <td class="align-middle">${article.name}</td>
-        <td class="align-middle">${article.currency} ${article.unitCost}</td>
-        <td class="align-middle"><input type="number" style="width: 50px;" min ="1" onchange="updateProductoSubtotal(this.value, ${article.unitCost}, ${id}, '${article.currency}');" value=${article.count}></td>
-        <td class="subt align-middle" id="${id}">${subtotalPrice}</td>
+        <td><img src="${article.src}" class = "img-fluid tabletext" style ="max-width:50px!important"></td>
+        <td class="align-middle tabletext">${article.name}</td>
+        <td class="align-middle tabletext">${article.currency} ${article.unitCost}</td>
+        <td class="align-middle tabletext"><input type="number" style="width: 50px;" min ="1" onchange="updateProductoSubtotal(this.value, ${article.unitCost}, ${id}, '${article.currency}');" value=${article.count}></td>
+        <td class="subt align-middle tabletext" id="${id}">${subtotalPrice}</td>
         </tr>`
         id++;              
                        

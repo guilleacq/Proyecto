@@ -134,8 +134,8 @@ function addComment()
             <div class="comment-photo"> 
                 <img src="https://i.pinimg.com/originals/e2/7c/87/e27c8735da98ec6ccdcf12e258b26475.png" alt="Profile Pic">
             </div>
-            <div class="comment-text">`+message.value+`</div>
-            <div class="comment-score">`+generateStars(rating)+`</div><br>
+            <div class="comment-text tabletext">`+message.value+`</div>
+            <div class="comment-score tabletext">`+generateStars(rating)+`</div><br>
         </div>`;
 
         newComments += currentComment;
@@ -182,8 +182,8 @@ function displayDefaultComments(commentList)
             <div class="comment-photo"> 
                 <img src="https://i.pinimg.com/originals/e2/7c/87/e27c8735da98ec6ccdcf12e258b26475.png" alt="Profile Pic">
             </div>
-            <div class="comment-text">`+commentList[i].description+`</div>
-            <div class="comment-score">`+generateStars(commentList[i].score)+`</div><br>
+            <div class="comment-text tabletext">`+commentList[i].description+`</div>
+            <div class="comment-score tabletext">`+generateStars(commentList[i].score)+`</div><br>
             </div>`;
 
 
