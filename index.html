@@ -27,7 +27,9 @@
       align-items: center;
       padding-top: 40px;
       padding-bottom: 40px;
-      background: linear-gradient(to bottom right, #33ccff 0%, #00ff99 112%);
+      /* background: linear-gradient(to bottom right, #33ccff 0%, #00ff99 112%); */
+      background: linear-gradient(0deg, rgba(2,0,36,1) 0%, rgba(20,128,166,0.4318102240896359) 0%, rgba(0,212,255,1) 100%);
+
     }
 
     .signin {
@@ -87,6 +89,19 @@
     {
       padding-left: 36px;
     }
+
+    .loginbutton
+    {
+      margin-top: 18px; 
+      background: linear-gradient(0deg, rgba(2,0,36,1) 0%, rgba(64, 146, 200, 1) 0%, rgb(37, 140, 224) 100%); 
+      border-color:rgb(114, 168, 230); 
+      border-radius: 15px;
+    }
+
+    .loginbutton:active
+    {
+      transform: scale(1.03, 1.03);
+    }
     
   </style> 
 </head>
@@ -110,7 +125,7 @@
             <span id = "message" style="color:red"> </span>
         </div>
         <div class="form-group">  
-            <button type="submit" class="btn btn-primary btn-block" style="margin-top: 18px; background: linear-gradient(to right, #33ccff 0%, #00ff00 200%);border-color:rgb(24, 211, 139); border-radius: 20px;">Iniciar Sesion</button>
+            <button type="submit" class="btn btn-primary btn-block loginbutton">Iniciar Sesion</button>
         </div>      
     </form>
 

@@ -222,8 +222,14 @@ footer p {
   font-family: 'Roboto', sans-serif;
   font-size: 13px;
   font-weight: bolder;
-  background: linear-gradient(to bottom right, #33ccff 0%, #00ff99 112%);
+  /* background: linear-gradient(to bottom right, #33ccff 0%, #00ff99 112%); */
+  background: linear-gradient(0deg, rgba(2,0,36,1) 0%, rgba(20,128,166,0.8) 0%, rgba(0,212,255,1) 100%);
   border: 0;
+}
+
+.newcomment-submit:active
+{
+  transform: scale(1.1, 1.1);
 }
 
 .submit-icon
@@ -293,6 +299,11 @@ footer p {
 .recommended-image
 {
   width: 300px;
+}
+
+.recommended-image:hover
+{
+  transform: scale(1.1, 1.1);
 }
 
 
@@ -472,9 +483,16 @@ a.custom-card:hover {
 
   .btnbuy
   {
-      background: linear-gradient(to bottom right, #33ccff 0%, #00ff99 112%);
+      /* background: linear-gradient(to bottom right, #33ccff 0%, #00ff99 112%); */
+      background: linear-gradient(0deg, rgba(2,0,36,1) 0%, rgba(20,128,166,0.8) 0%, rgba(0,212,255,1) 100%);
       border: 0;
   }
+
+  .btnbuy:active
+  {
+      transform: scale(1.1, 1.1);
+  }
+
 
 /* DARK THEME */
 
