@@ -35,8 +35,8 @@
 </head>
 
 <body>
-  <nav class="navbar sticky-top navbar-expand-sm navbar-light bg-light navbar-custom">
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+  <nav class="navbar sticky-top navbar-expand-sm navbar-light bg-light navbar-custom darkable">
+    <button class="navbar-toggler custom-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
     <div id="navbarNavDropdown" class="collapse navbar-collapse">
@@ -65,19 +65,23 @@
 
 
     <div class="container">
-      <table class="table">
-          <thead>
-            <tr>
-              <th scope="col"></th>
-              <th scope="col">Nombre</th>
-              <th scope="col">Precio</th>
-              <th scope="col">Cantidad</th>
-              <th scope="col">Subtotal</th>
-            </tr>
-          </thead>
-          <tbody id="carrito">    
-          </tbody>
-    </table>
+      <div class="row justify-content-center">
+        <div class="col-auto">
+          <table class="table table-responsive" style="margin: auto;">
+              <thead>
+                <tr>
+                  <th scope="col"></th>
+                  <th scope="col">Nombre</th>
+                  <th scope="col">Precio</th>
+                  <th scope="col">Cantidad</th>
+                  <th scope="col">Subtotal</th>
+                </tr>
+              </thead>
+              <tbody id="carrito">    
+              </tbody>
+        </table>
+      </div>
+    </div>
   </div>
 
   <div class="container">

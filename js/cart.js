@@ -17,7 +17,7 @@ function showTotal()
 {
     let htmlToAppend = "";
     htmlToAppend += `
-    <tr>
+    <tr>    
     <td></td>
     <td class="align-middle"></td>
     <td class="align-middle"></td>
@@ -47,7 +47,7 @@ function showCarrito(){ //Muestra el carrito cargando elemento por elemento desd
         <td><img src="${article.src}" class = "img-fluid" style ="max-width:50px!important"></td>
         <td class="align-middle">${article.name}</td>
         <td class="align-middle">${article.currency} ${article.unitCost}</td>
-        <td class="align-middle"><input type="number" min ="1" onchange="updateProductoSubtotal(this.value, ${article.unitCost}, ${id}, '${article.currency}');" value=${article.count}></td>
+        <td class="align-middle"><input type="number" style="width: 50px;" min ="1" onchange="updateProductoSubtotal(this.value, ${article.unitCost}, ${id}, '${article.currency}');" value=${article.count}></td>
         <td class="subt align-middle" id="${id}">${subtotalPrice}</td>
         </tr>`
         id++;              

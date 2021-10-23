@@ -36,8 +36,8 @@
 
 <body>
 
-  <nav class="navbar sticky-top navbar-expand-sm navbar-light bg-light navbar-custom">
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+  <nav class="navbar sticky-top navbar-expand-sm navbar-light bg-light navbar-custom darkable">
+    <button class="navbar-toggler custom-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
     <div id="navbarNavDropdown" class="collapse navbar-collapse">
@@ -137,8 +137,20 @@
 
   <footer class="text-muted bg-light">
     <div class="container">
-      <p>Este sitio forma parte de Desarrollo Web - JAP - 2020</p>
+      <p class="float-right">
+        <a href="#">Volver arriba</a>
+      </p>
+      <br>
+      <br>
+      <div class="dtheme float-right">
+        <input type="checkbox" class="checkboxdark" id="chk">
+        <label class="darkthemelabel" for="chk">
+        <div class="ball"></div>
+        </label>
+      </div>
+      <p>Este sitio forma parte de Desarrollo Web - JAP - 2021. Realizado por Guillermo Acquistapace</p>
       <p>Clickea <a target="_blank" href="Letra.pdf">aquí</a> para descargar la letra del obligatorio.</p>
+
     </div>
   </footer>
   <div class="alert fade alert-success" role="alert" id="alertResult">
