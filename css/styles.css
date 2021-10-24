@@ -599,6 +599,12 @@ body.dark .darkable
   background-color: #33363d !important;
 }
 
+body.dark .usercard * 
+{
+  background-color: #292C35!important;
+  color: rgb(202, 202, 202)!important;
+}
+
 body.dark .custom-toggler.navbar-toggler
 {
   border-color: #292C35;
