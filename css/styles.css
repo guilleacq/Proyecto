@@ -461,6 +461,13 @@ a.custom-card:hover {
   margin-left: 57px;
 }
 
+.fotoperfil
+{
+  border-radius: 12px;
+  width: 160px;
+  box-shadow: 2px 1px 15px -4px rgba(0,0,0,0.69);
+}
+
 /* Star rating: https://codepen.io/andreacrawford/pen/NvqJXW */
 
 

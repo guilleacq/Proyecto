@@ -82,10 +82,13 @@
               <li id="loaded-email" class="list-group-item">Correo electrónico</li>
               <li id="loaded-telefono" class="list-group-item">Teléfono</li>
             </ul>
+            <div class="card-body text-center" id="loaded-foto-div">
+              <img id="loaded-foto" class="fotoperfil" src="" alt="Foto perfil">
+            </div>
             <div class="card-body text-center">
               <a href="index.html" onclick="localStorage.clear();">Cerrar Sesión</a>
             </div>
-          </div>
+          </div> 
         </div>
       </div>
 
@@ -119,6 +122,12 @@
             <div class="col">
               <label for="telefonouser" class="form-label">Telefono</label>
               <input class="form-control" id="telefonouser" telefono="telefonou" placeholder="Teléfono">
+            </div>
+          </div>
+          <div class="row" style="padding-top: 30px;">
+            <div class="col">
+              <label for="fotouser" class="form-label">Imagen de perfil</label>
+              <input class="form-control" id="fotouser" name="fotou" placeholder="https://www.google.com/foto.png">
             </div>
           </div>
           <div class="row" style="padding-top: 50px;">

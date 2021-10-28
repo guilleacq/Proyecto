@@ -1,12 +1,22 @@
+function isLinkImage(link) //Check if a link is an image
+{
+    let end = link.slice(-3); //take 3 last letters
+    return (end === "jpg" || end === "png");
+}
+
+
+
 function verifyProfileInfo()
 {
     let isCorrect = true;
+    let fotoLink = "https://www.pinclipart.com/picdir/big/157-1578186_user-profile-default-image-png-clipart.png";
     let informacion;
 
     let nombre = document.getElementById("nombrecompletouser").value;
     let edad = document.getElementById("edaduser").value;
     let email = document.getElementById("emailuser").value;
     let telefono = document.getElementById("telefonouser").value;
+    let foto = document.getElementById("fotouser").value;
 
     
     if (isNaN(telefono) || telefono.length == 0) //Si el telefono no es un numero...
@@ -27,6 +37,13 @@ function verifyProfileInfo()
         isCorrect = false; 
     }
 
+    if (isLinkImage(foto))
+    {
+        fotoLink = foto;
+    }
+
+
+
 
     if (isCorrect) //Update information and hide form
     {
@@ -34,7 +51,8 @@ function verifyProfileInfo()
             infoNombre: nombre,
             infoEdad: edad,
             infoEmail: email, //Diccionario de datos del usuario (una vez aceptados)
-            infoTelefono: telefono
+            infoTelefono: telefono,
+            infoFoto: fotoLink
         };
 
         localStorage.setItem("infouser", JSON.stringify(informacion)); //Convierte el diccionario de datos a JSON y lo guarda en "infouser"
@@ -54,12 +72,17 @@ function getUserinfo()
     if (info == null) // Si todavia no cargó su informacion... (JSON vacío)
     {
         document.getElementById("finaldatos").style = "display: none;";
+        document.getElementById("loaded-foto-div").style = "display: none;";
     }
     else {
         document.getElementById("loaded-nombre").innerHTML = `<b>${info["infoNombre"]}</b>`;
         document.getElementById("loaded-edad").innerHTML = info["infoEdad"]+" años";
         document.getElementById("loaded-email").innerHTML = info["infoEmail"];
         document.getElementById("loaded-telefono").innerHTML = info["infoTelefono"];
+
+        //Cargar foto
+        document.getElementById("loaded-foto").src = info["infoFoto"];
+        document.getElementById("loaded-foto-div").style = "display: block;";
 
         //document.getElementById("usercuestionario").style = "display: none;";
         //document.getElementById("titulodatos").style = "display: none;";
