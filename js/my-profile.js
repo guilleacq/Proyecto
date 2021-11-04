@@ -9,7 +9,7 @@ function isLinkImage(link) //Check if a link is an image
 function verifyProfileInfo()
 {
     let isCorrect = true;
-    let fotoLink = "https://www.pinclipart.com/picdir/big/157-1578186_user-profile-default-image-png-clipart.png";
+    let fotoLink = "https://vectorified.com/images/default-user-icon-33.jpg";
     let informacion;
 
     let nombre = document.getElementById("nombrecompletouser").value;

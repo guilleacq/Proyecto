@@ -5,11 +5,20 @@ let productosCarrito=[];
 
 //Funcion que actualiza el subtotal cuando cambia la cantidad. precio (int), cantidad (int), subtotalId (id)
 function updateProductoSubtotal(precio, cantidad, subtotalId, tipoMoneda){
-    if (tipoMoneda == "USD")
-        document.getElementById(subtotalId).innerHTML = cantidad*precio * 43;
-    else
-        document.getElementById(subtotalId).innerHTML = cantidad*precio;
 
+    if (tipoMoneda == "USD")
+    {
+        document.getElementById(subtotalId).innerHTML = cantidad*precio * 43;
+        document.getElementById("precioTotalSubtotal").innerHTML = cantidad*precio * 43;
+    }
+
+    else
+    {
+        document.getElementById(subtotalId).innerHTML = cantidad*precio;
+        document.getElementById("precioTotalSubtotal").innerHTML = cantidad*precio;
+    }
+
+    updatePrecioFinal();
     updateTotalPrice();
 }
 
@@ -42,6 +51,8 @@ function showCarrito(){ //Muestra el carrito cargando elemento por elemento desd
         else 
             subtotalPrice = parseInt(article.unitCost) * parseInt(article.count); //Hace el calculo del subtotal inicial para pesos
     
+        document.getElementById("precioTotalSubtotal").innerHTML = subtotalPrice;
+
         htmlToAppend += `
         <tr>
         <td><img src="${article.src}" class = "img-fluid tabletext" style ="max-width:50px!important"></td>
@@ -58,7 +69,24 @@ function showCarrito(){ //Muestra el carrito cargando elemento por elemento desd
 
     showTotal(); //Muestra el total despues de haber cargado los productos
     updateTotalPrice(); //actualiza el precio total
+    updatePrecioFinal();
 
+
+}
+
+function updatePrecioFinal() //Funcion que actualiza el precio final (al final de la pagina)
+{
+    const envios = document.querySelectorAll('input[name="shippingType"]'); //toma todos los radio de tipo shipping
+            let selectedValue;
+            for (const envio of envios) { 
+                if (envio.checked) { //Se fija para cada tipo de envio si uno esta seleccionado y guarda su valor
+                    selectedValue = envio.value;
+                    break;
+                }
+            }
+
+    document.getElementById("precioTotalEnvio").innerHTML = parseInt(document.getElementById("precioTotalSubtotal").innerHTML) * parseFloat(selectedValue); //calcula el añadido del tipo de envio
+    document.getElementById("precioTotalTotal").innerHTML = parseInt(document.getElementById("precioTotalEnvio").innerHTML) + parseInt(document.getElementById("precioTotalSubtotal").innerHTML); //calcula el precio final
 
 }
 
@@ -90,8 +118,13 @@ document.addEventListener("DOMContentLoaded", function(e){ //Cuando se carga la 
     getCarrito("https://japdevdep.github.io/ecommerce-api/cart/654.json")
     .then(respuesta=>{
         productosCarrito = respuesta.articles; //Guarda los articulos del carrito en productosCarrito
+        updatePrecioFinal();
         showCarrito(); 
     })
 })
+
+$('input[type=radio][name="shippingType"]').change(function() {
+    updatePrecioFinal();
+});
 
 

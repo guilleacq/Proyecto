@@ -87,18 +87,71 @@
   <div class="container">
     <form class="needs-validation" id="sell-info">
       <hr class="mb-4">
+      <h5 class="mb-3">Tipo de pago</h5> 
+      <div class="d-block my-3">
+        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#menuTipoPago">
+          Seleccionar uno
+        </button>
+
+        <div class="modal fade " id="menuTipoPago" data-backdrop="static" data-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+          <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content darkable">
+              <div class="modal-header">
+                <h5 class="modal-title" id="staticBackdropLabel">Tipo de pago</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                  <span aria-hidden="true">&times;</span>
+                </button>
+              </div>
+              <div class="modal-body">
+                <form class="form-group" id="card-info">
+                  <label for="tipoTarjeta">Tarjeta</label>
+                  <select class="form-control darkable-button" id="tipoTarjeta">
+                    <option>Mastercard</option>
+                    <option>Visa</option>
+                    <option>American Express</option>
+                  </select>
+
+                  <br>
+                  <label for="numeroTarjeta">Número de la tarjeta</label>
+                  <input type="text" class="form-control" id="numeroTarjeta" placeholder="XXXX XXXX XXXX XXXX">
+                  <br>
+                  <label for="fechaVenc">Fecha de vencimiento</label>
+                  <input type="text" class="form-control" id="fechaVenc" placeholder="XX/XX">
+                  <br>
+                  <label for="cvc">CVC</label>
+                  <input type="text" class="form-control" id="cvc" placeholder="XXX">
+                  <br>
+                  <hr class="mb-4">
+                  <br>
+                  <form class="form-group" id="transferencias">
+                    <label for="tipoTransferencia">Transferencia</label>
+                    <select class="form-control darkable-button" id="tipoTransferencia">
+                      <option>Santander</option>
+                      <option>BBVA</option>
+                      <option>BROU</option>
+                    </select>  
+              </div>
+              <div class="modal-footer">
+                <button type="button" class="btn btn-primary" data-dismiss="modal">Guardar</button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+      <hr class="mb-4">
       <h5 class="mb-3">Tipo de envío</h5> 
       <div class="d-block my-3">
         <div class="custom-control custom-radio">
-          <input id="premiumenvradio" name="shippingType" type="radio" class="custom-control-input" checked="" required="">
+          <input id="premiumenvradio" name="shippingType" type="radio" value="0.15" class="custom-control-input" checked="" required="">
           <label class="custom-control-label" for="premiumenvradio">Premium (2 a 5 dias - 15%):</label>
         </div>
         <div class="custom-control custom-radio">
-          <input id="expressenvradio" name="shippingType" type="radio" class="custom-control-input" required="">
+          <input id="expressenvradio" name="shippingType" type="radio" value="0.07" class="custom-control-input" required="">
           <label class="custom-control-label" for="expressenvradio">Express (5 a 8 dias -  7%): </label>
         </div>
         <div class="custom-control custom-radio">
-          <input id="estandarenvradio" name="shippingType" type="radio" class="custom-control-input" required="">
+          <input id="estandarenvradio" name="shippingType" type="radio" value="0.05" class="custom-control-input" required="">
           <label class="custom-control-label" for="estandarenvradio">Estándar (12 a 15 dias - 5%): </label>
         </div>
       </div>
@@ -132,6 +185,28 @@
       </div>
     </div>
   </div>
+  <hr class="mb-4">
+  <h4 class="mb-3">Precio final</h4>
+  <ul class="list-group mb-3">
+      <li class="list-group-item d-flex justify-content-between lh-condensed darkable-button">
+        <div>
+          <h6 class="my-0">Subtotal</h6>
+          <small class="text-muted">Precio a pagar por los productos</small>
+        </div>
+        <span class="text-muted" id="precioTotalSubtotal">-</span>
+      </li>
+      <li class="list-group-item d-flex justify-content-between lh-condensed darkable-button">
+        <div>
+          <h6 class="my-0">Envío</h6>
+          <small class="text-muted">Costo de envío seleccionado</small>
+        </div>
+        <span class="text-muted" id="precioTotalEnvio">-</span>
+      </li>
+      <li class="list-group-item d-flex justify-content-between darkable-button">
+        <span>Total ($)</span>
+        <strong id="precioTotalTotal">-</strong>
+      </li>
+    </ul>
   <hr class="mb-4">
   <div class="row">
     <div class="col-md-6 mb-3">
