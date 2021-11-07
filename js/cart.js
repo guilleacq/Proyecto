@@ -1,5 +1,24 @@
 let productosCarrito=[];
 
+//Funcion que valida si es posible realizar una compra (todos los campos fueron completados)
+function validatePurchase()
+{
+    let numTarjeta = document.getElementById("tipoTarjeta").value.length;
+    let fechaVenc = document.getElementById("fechaVenc").value.length;
+    let cvc = document.getElementById("cvc").value.length;
+    let calle = document.getElementById("nombreCalle").value.length;
+    let numero = document.getElementById("numeroCasa").value.length;
+    let esquina = document.getElementById("nombreEsquina").value.length;
+
+    if (numTarjeta > 0 && fechaVenc > 0 && cvc > 0 && calle > 0 && numero > 0 && esquina > 0)
+        return true;
+    else
+    {
+        alert("ERROR: Campos incompletos");
+        return false;
+    }
+
+}
 
 
 
@@ -9,13 +28,11 @@ function updateProductoSubtotal(precio, cantidad, subtotalId, tipoMoneda){
     if (tipoMoneda == "USD")
     {
         document.getElementById(subtotalId).innerHTML = cantidad*precio * 43;
-        document.getElementById("precioTotalSubtotal").innerHTML = cantidad*precio * 43;
     }
 
     else
     {
         document.getElementById(subtotalId).innerHTML = cantidad*precio;
-        document.getElementById("precioTotalSubtotal").innerHTML = cantidad*precio;
     }
 
     updatePrecioFinal();
@@ -67,9 +84,10 @@ function showCarrito(){ //Muestra el carrito cargando elemento por elemento desd
     }
     document.getElementById("carrito").innerHTML += htmlToAppend;
 
+    updatePrecioFinal();
     showTotal(); //Muestra el total despues de haber cargado los productos
     updateTotalPrice(); //actualiza el precio total
-    updatePrecioFinal();
+
 
 
 }
@@ -112,7 +130,10 @@ function updateTotalPrice()
     }
 
     document.getElementById("total").innerHTML = sum;
+    document.getElementById("precioTotalSubtotal").innerHTML = sum;
 }
+
+
 
 document.addEventListener("DOMContentLoaded", function(e){ //Cuando se carga la pagina.. carga el JSON
     getCarrito("https://japdevdep.github.io/ecommerce-api/cart/654.json")
@@ -123,7 +144,7 @@ document.addEventListener("DOMContentLoaded", function(e){ //Cuando se carga la 
     })
 })
 
-$('input[type=radio][name="shippingType"]').change(function() {
+$('input[type=radio][name="shippingType"]').change(function() { //Si cambia el boton radio seleccionado
     updatePrecioFinal();
 });
 
